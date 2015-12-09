@@ -12,8 +12,8 @@ end
     @hp -= 10
   end
 
-  def attack(player)
-    player.receive_damage
-  end
+  # def attack(player)
+  #   player.receive_damage
+  # end
 
 end

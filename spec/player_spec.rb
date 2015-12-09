@@ -13,13 +13,8 @@ describe Player do
     expect(player_2.hp).to eq Player::START_HP
   end
 
-  it 'damages player' do
-    expect(player_2).to receive(:receive_damage)
-    player_1.attack(player_2)
-  end
-
   it 'will deduct attack from HP' do
-    player_1.attack(player_2)
+    player_2.receive_damage
     expect(player_2.hp).to eq 35
   end
 
