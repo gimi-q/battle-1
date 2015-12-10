@@ -4,7 +4,6 @@ require_relative './lib/game'
 
 class Battle < Sinatra::Base
 
-
   get '/' do
     erb :index
   end
@@ -17,15 +16,26 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    $game
+    $game # might be useless check this
+    @game = $game
+    if @game.player_2.hp <= 0
+      @game.losing_player = @game.player_2
+      erb :outcome
+    elsif @game.player_1.hp <=0
+      @game.losing_player = @game.player_1
+      erb :outcome
+    else
     erb :play
+    end
   end
 
   get '/attack' do
-    $game.attack($game.player_2)
-    erb :attack
-  end
+    @game = $game
+      @game.attack
+      @game.switch_turn
+      erb :attack
 
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

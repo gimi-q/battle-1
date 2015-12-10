@@ -6,7 +6,7 @@ feature 'reduce player HP' do
     sign_in_and_play
     click_button('Attack')
     visit('play')
-    expect(page).to have_content 'Jane: 35HP'
+    expect(page).to have_content 'Joe vs Jane Joe: 45HP Jane: 35HP Attack'
   end
 
 
