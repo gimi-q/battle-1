@@ -1,16 +1,16 @@
 class Player
-START_HP = 45
-attr_reader :name, :hp
+START_HP = 100
+attr_reader :name, :hp, :computer
 
-
-def initialize(name, hp = START_HP)
+def initialize(name, hp = START_HP,computer = false)
   @name = name
   @hp = START_HP
-
+  computer == "true" ? @computer = true : @computer = false
+  # @computer = true if a == true
 end
 
   def receive_damage
-    @hp -= 10
+    @hp -= Kernel.rand(60)
   end
 
 end

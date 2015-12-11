@@ -4,6 +4,6 @@
 feature 'switch player turn' do
   scenario 'should switch turns' do
     sign_in_and_play
-    expect(page).to have_content 'Player 2 turn'
+    expect(page).to have_content 'ATTACKER: Joe'
   end
 end

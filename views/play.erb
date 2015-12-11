@@ -1,8 +1,15 @@
 <%= $game.player_1_name%> vs <%= $game.player_2_name %>
 
+<div>
 <p><%= $game.player_1_name %>: <%= $game.player_1_hp %>HP</p><br>
+</div>
+<div>
 <p><%= $game.player_2_name %>: <%= $game.player_2_hp %>HP</p><br>
+</div>
 
+<label for = "attacker_now">
+<p>ATTACKER: <%= $game.players[0].name %></p>
+</label>
 <form action="/attack">
   <button type="submit" value="Attack">Attack</button>
 </form>
